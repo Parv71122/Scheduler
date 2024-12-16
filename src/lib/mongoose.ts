@@ -10,6 +10,7 @@ export const connectToDatabase = async () => {
 
   try {
     const mongoURI = process.env.MONGODB_URI as string;
+    console.log("🚀 ~ connectToDatabase ~ MONGODB_URI:", mongoURI)
     await mongoose.connect(mongoURI);
     isConnected = true;
     console.log('Connected to MongoDB');
