@@ -7,7 +7,7 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { cookies } from 'next/headers'
-import jwt, { JwtPayload } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 import { handleLogoutAction } from '@/features/users/actions/userActions'
 import Form from 'next/form'
 
