@@ -12,6 +12,7 @@ const bookingValidationSchema = z.object({
     date: z.string().refine((date) => !isNaN(Date.parse(date)), {
         message: 'Invalid date format.',
     }),
+    table: z.string().optional(),
     reference: z.string().optional(),
     advance: z.string()
         .min(0, { message: 'Advance payment must be a non-negative number.' }),

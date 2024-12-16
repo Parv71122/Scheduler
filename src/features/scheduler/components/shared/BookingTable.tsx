@@ -29,6 +29,7 @@ import { Input } from "@/components/ui/input"
 import { MoreHorizontal, ChevronDown } from "lucide-react"
 import { handleDeleteBookingAction } from "../../actions/bookingAction"
 import ViewBooking from "./ViewBooking"
+import { EditBooking } from "./EditBooking"
 
 // Columns definition
 export const columns: ColumnDef<IBooking>[] = [
@@ -57,13 +58,14 @@ export const columns: ColumnDef<IBooking>[] = [
   { accessorKey: "members", header: "Members" },
   { accessorKey: "time", header: "Time" },
   { accessorKey: "date", header: "Date" },
+  { accessorKey: "table", header: "Table" },
   { accessorKey: "reference", header: "Reference" },
   {
     accessorKey: "advance",
     header: "Advance",
     cell: ({ row }) => {
       const advance = parseFloat(row.getValue("advance"))
-      return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(advance)
+      return new Intl.NumberFormat("en-US", { style: "currency", currency: "INR" }).format(advance)
     },
   },
   { accessorKey: "remarks", header: "Remarks" },
@@ -78,11 +80,18 @@ export const columns: ColumnDef<IBooking>[] = [
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
-          <ViewBooking booking={row.original} />
-          <DropdownMenuItem>Edit Booking</DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDeleteBookingAction((row.original as IBooking)._id.toString())}>
-            Delete Booking
-          </DropdownMenuItem>
+          <div className="flex flex-col">
+            {/* Wrap each action in DropdownMenuItem for consistent styling */}
+            <DropdownMenuItem className="cursor-pointer">
+              <ViewBooking booking={row.original} />
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              <EditBooking booking={row.original} />
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => handleDeleteBookingAction((row.original as IBooking)._id.toString())}>
+              Delete Booking
+            </DropdownMenuItem>
+          </div>
         </DropdownMenuContent>
       </DropdownMenu>
     ),

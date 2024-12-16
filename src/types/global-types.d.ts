@@ -13,6 +13,7 @@ type Bookings = {
     members: number
     time: string
     date: string
+    table: string
     reference: string
     advance: number
     remarks: string

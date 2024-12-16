@@ -19,7 +19,7 @@ export function AddBooking() {
             <DialogTrigger asChild>
                 <Button variant="outline">Create A Booking</Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[800px]">
+            <DialogContent className="sm:max-w-[800px] max-h-[700px] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle>Create A Booking</DialogTitle>
                     <DialogDescription>
@@ -47,6 +47,10 @@ export function AddBooking() {
                         <div>
                             <Label className='inline-block mb-4' htmlFor='date'>Date</Label>
                             <Input type="date" id='date' name='date' />
+                        </div>
+                        <div>
+                            <Label className='inline-block mb-4' htmlFor='table'>Table</Label>
+                            <Input type="text" id='table' name='table' placeholder='Enter Allotted Table' />
                         </div>
                         <div>
                             <Label className='inline-block mb-4' htmlFor='reference'>Reference</Label>

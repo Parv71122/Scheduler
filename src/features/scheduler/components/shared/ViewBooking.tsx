@@ -17,6 +17,7 @@ interface ViewBookingProps {
     members: string;
     time: string;
     date: string;
+    table: string;
     reference: string;
     advance: string;
     remarks?: string;
@@ -28,7 +29,7 @@ const ViewBooking = ({ booking }: ViewBookingProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">View Booking Details</Button>
+        <p>View Booking Details</p>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px]">
         <DialogHeader>
@@ -52,6 +53,9 @@ const ViewBooking = ({ booking }: ViewBookingProps) => {
           </div>
           <div>
             <strong>Date:</strong> {booking.date}
+          </div>
+          <div>
+            <strong>Table:</strong> {booking.table}
           </div>
           <div>
             <strong>Reference:</strong> {booking.reference}
