@@ -20,6 +20,10 @@ const About = () => {
             title: 'Our Goals',
             text: 'Consequat dui inceptos venenatis habitasse suspendisse praesent lobortis nec. Rhoncus consequat dapibus dapibus nec habitant venenatis. Egestas vulputate nunc eu egestas sapien nascetur. Fames lectus rhoncus ornare malesuada dis hac sollicitudin aenean.',
         },
+        {
+            title: 'Our Ideology',
+            text: 'Consequat dui inceptos venenatis habitasse suspendisse praesent lobortis nec. Rhoncus consequat dapibus dapibus nec habitant venenatis. Egestas vulputate nunc eu egestas sapien nascetur. Fames lectus rhoncus ornare malesuada dis hac sollicitudin aenean.',
+        },
     ];
 
     return (
